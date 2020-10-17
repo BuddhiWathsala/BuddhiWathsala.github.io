@@ -1,71 +1,55 @@
 ---
-title: Sample Post
+title: Why I Changed My Browser?
 layout: post
 post-image: 
-description: A sample post to show how the content will look and how will different
-  headlines, quotes and codes will be represented.
+description: 
 tags:
-- sample
-- post
-- test
+- brave
+- browser
+- chrome
+---
+<p align="center" width="100%">
+    <img width="100%" src="https://raw.githubusercontent.com/webmisproject/blog-images/master/why-i-change-browser/brave-logo.jpeg"> 
+</p>
 ---
 
-This post will show you how the content will look like in the post pages and how the headlines, quotes and quotes will be represented. Jekyll is mainly used to write simple markdown and after that it renders out a static pages, so you need to know the basics of writing markdown for that.
-For more information about writing markdown you can checkout the following markdown cheatsheets:
-* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-* [Markdown Guide](https://www.markdownguide.org/cheat-sheet/)
-* [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+In the last couple of years, I had been used multiple web browsers for my daily activities. I had used Chrome, Firefox, Safari, and even Chromium. But always my default browser was Chrome. When I installed a new operating system or when I changed my computer, the first software I wanted to install was the Chrome browser.
 
----
+A couple of months back I have read a [blog](https://www.browserguides.org/brave-vs-chrome/) which is about a totally new browser called [Brave](https://brave.com/). That blog compared the Chrome browser along with Brave. As that blog stated Brave browser block ads, pop-ups, and provide high security, etc. But I don’t want to talk about all these things again. Instead, I just want to share my experience with the Brave browser.
 
-# This is the h1 text
-## This is the h2 text
-### This is the h3 text
-#### This is the h4 text
-##### This is the h5 text
-###### This is the h6 text
+# It is almost like chrome
 
-**Bold Text in the post will look like:**<br>
-**This text is Bold**
+The user interface of the Brave browser is very similar to Chrome. The search bar, result pages, and even settings page also similar to Chrome. So you can get that familiar Chrome experience from Brave and even more.
 
-**Italic Text in the post will look like:**<br>
-*This text is Italic*
+<p align="center" width="100%">
+    <img width="100%" src="https://raw.githubusercontent.com/webmisproject/blog-images/master/why-i-change-browser/brave-search.png"> 
+</p>
 
-> Quotes on your post will look like this
+Moreover, all the extensions that support in Chrome also support in Brave. I really like to use Grammarly extension in my browsers. Currently, I’m using this Grammarly Chrome extension in my Brave browser without any issue.
 
-`Codes on your post will look like this`
+# Yes, it blocks the ads and pop-ups
 
-**Link in the post will look like:**<br>
-[This is a link](#)
+One of the fascinating features of Brave is it by default blocks all the ads and pop-ups that you might face while you are browsing. I tried several web sites with different browsers such as Chrome, Firefox, and Brave. I experienced that ad blocking and preventing the pop-ups in my Brave browser is a very fascinating feature.
 
-**Bullet list in the post will look like:**
-* Item 1
-* Item 2
-* Item 3
-* Item 4
-* Item 5
+Also, brave blocks 3rd party cookies tracking which happened in other browsers. However, to achieve these blocking mechanisms in other browsers, you will need third-party extensions but in Brave, it is not the case.
+Due to this by default blocking system, you will feel that Brave is faster compared to other browsers.
 
-**Number list in the post will look like:**
-1. Item 1
-2. Item 2
-3. Item 3
-4. Item 4
-5. Item 5
+# I like Brave UX
 
-**Images in the post will look like:**<br>
-![Test Image](/WhatATheme/assets/images/1280x720%20Placeholder.png)
+As programmers, we always love to have dark themes. The Brave itself has a dark theme. Therefore, I really loved to use the Brave with the dark theme on it.
 
-**Normal text in the post will look like**<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id finibus nisl. Etiam in hendrerit est. Nulla non erat ac lectus interdum lobortis. Vestibulum at mi ex. Mauris nisl mi, venenatis et feugiat nec, finibus porttitor velit. Suspendisse tincidunt lobortis leo, quis tristique tellus iaculis quis. Donec eleifend pulvinar gravida. Proin non lorem eros. Donec sit amet finibus ex, eget vestibulum nunc. Ut ut enim id purus porttitor tristique. Vivamus tincidunt eleifend hendrerit. Proin metus felis, ultrices vel dui in, porta dapibus dui. Sed sagittis ex vitae dui tristique dignissim. Cras vel leo ipsum.
+One of the unique features of Brave is when you opened a new tab, the tab will show you a beautiful eye-catching picture. I love that feature because sometimes we are in stress to find out solutions for some of the complex programming issues. Sometimes, I spent days or even weeks to find out solutions to some of the problems. So, when we are coding we do not even see the nice desktop wallpaper on our computer. At that time we are so busy with browsing and trying multiple solutions. At that busy time, seeing a beautiful picture calm you down and it gives real comfort to your eyes unexpectedly. I experience it a lot and I love it very much.
 
-Aenean ac neque et risus mattis accumsan. Sed ac tellus molestie, lacinia ante sit amet, convallis felis. Maecenas aliquet lectus nec euismod auctor. Donec finibus pellentesque tortor, ac efficitur metus suscipit non. Proin diam orci, blandit quis malesuada ac, efficitur a nisl. Mauris eleifend consequat blandit. Sed egestas quam et orci gravida, non euismod metus scelerisque. Curabitur venenatis pellentesque erat commodo pharetra. Fusce id ante nec ipsum fringilla auctor. In justo quam, feugiat placerat eleifend dapibus, luctus et quam. Fusce facilisis erat ut odio convallis viverra et id mauris. Sed vehicula tempus consectetur. Aliquam pharetra, purus non egestas tristique, tellus massa fringilla est, id sagittis tellus urna non mauris. Suspendisse fringilla, velit nec blandit facilisis, ligula ante imperdiet est, et placerat magna sem quis tortor.
+<p align="center" width="100%">
+    <img width="100%" src="https://raw.githubusercontent.com/webmisproject/blog-images/master/why-i-change-browser/brave-ui.png"> 
+</p>
 
-Vestibulum vitae fermentum velit, rhoncus egestas orci. Nulla at purus ut orci posuere vulputate. In eget leo diam. In congue in diam nec elementum. Suspendisse fringilla ante nulla, eu tristique orci ultrices eget. Aenean non lorem tellus. Vestibulum tempor metus sit amet tellus feugiat, sit amet consequat lacus ultricies.
+# Do you love Tor?
+If you are a person that uses Tor, then Brave can help you. Brave does not only supports private browsing but also supports private browsing using Tor. So you do not need any other software to use Tor, you can directly use Tor using Brave.
 
-Donec imperdiet, lectus eget congue cursus, dolor enim finibus risus, ut molestie lorem tellus non tortor. Donec quam nibh, molestie in dapibus et, efficitur non tortor. Morbi orci tellus, mollis vel mi vitae, auctor lobortis erat. Ut gravida velit eget ligula lacinia, id rhoncus tellus gravida. Maecenas laoreet rutrum consequat. Suspendisse sed nibh dui. Curabitur dictum euismod mollis. Sed egestas libero libero, eu accumsan augue placerat non. Nunc id condimentum orci. Mauris vitae sollicitudin quam.
+# Let’s summarize!
 
-**Giphy Gifs will look like:**<br>
-<iframe src="https://giphy.com/embed/ZqlvCTNHpqrio" width="480" height="259" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/laughing-despicable-me-minions-ZqlvCTNHpqrio">via GIPHY</a></p>
+A couple of months back I changed my default browser to Brave. It has been a great experience for me to use this new browser. It will stop you seen unwanted ads and prevent a mess of pop-ups. The UI of brave is similar to chrome and the UX of brave make you comfortable during your browsing time. From my experience, I really recommend any of you to use brave and get an interesting experience from it.
 
-**YouTUbe Videos will look like:**<br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jTPXwbDtIpA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+*Be brave to use brave…!!!*
