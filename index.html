@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buddhi Wathsala — Computer Science Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #5a5a56;
+      --ink-faint: #9a9a94;
+      --rule: #e2e2dc;
+      --bg: #fafaf7;
+      --bg-warm: #f4f4ef;
+      --accent: #2c5f8a;
+      --accent-soft: #e8f0f7;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .site-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Nav ── */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: rgba(250,250,247,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    nav .site-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── Hero ── */
+    #about {
+      padding: 6rem 0 5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 3rem;
+      align-items: start;
+    }
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.4rem;
+      color: var(--ink);
+    }
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+    }
+    .hero-bio strong { color: var(--ink); font-weight: 500; }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.4rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    .contact-row a {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s;
+    }
+    .contact-row a:hover { color: var(--accent); }
+    .contact-row svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Photo */
+    .photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .photo-circle {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: var(--bg-warm);
+      border: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .photo-circle svg {
+      width: 64px;
+      height: 64px;
+      color: var(--ink-faint);
+    }
+    .photo-caption {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      text-align: center;
+    }
+
+    /* ── Section base ── */
+    section {
+      padding: 4rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Research ── */
+    .research-item {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 0 1.2rem;
+      margin-bottom: 2.4rem;
+      align-items: start;
+    }
+    .research-num {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      padding-top: 0.35rem;
+      text-align: right;
+    }
+    .research-title {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+    .research-desc {
+      font-size: 0.92rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+    .research-tag {
+      display: inline-block;
+      margin-top: 0.55rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    /* ── Publications ── */
+    .pub-item {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      line-height: 1.45;
+    }
+    .pub-authors {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-bottom: 0.35rem;
+    }
+    .pub-venue {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .pub-badge {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+    }
+    .pub-badge.published {
+      background: #eaf4ee;
+      color: #2d7a4a;
+    }
+    .pub-badge.review {
+      background: #fff4e5;
+      color: #a06020;
+    }
+
+    /* ── Experience ── */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.2rem 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .exp-role {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .exp-org {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      margin-bottom: 0.5rem;
+    }
+    .exp-period {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      text-align: right;
+      padding-top: 0.2rem;
+      white-space: nowrap;
+    }
+    .exp-desc {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+      grid-column: 1 / -1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2.5rem 0;
+      margin-top: 1rem;
+    }
+    footer .site-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: var(--ink-light);
+    }
+    .footer-note {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+    }
+
+    /* ── Fade in ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      animation: fadeUp 0.6s ease both;
+    }
+    .fade-up:nth-child(2) { animation-delay: 0.1s; }
+    .fade-up:nth-child(3) { animation-delay: 0.2s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .photo-wrap { flex-direction: row; align-items: center; gap: 1.2rem; }
+      .photo-circle { width: 90px; height: 90px; }
+      .nav-links { gap: 1.2rem; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-period { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="site-wrap">
+      <a class="nav-name" href="#about">Buddhi Wathsala</a>
+      <ul class="nav-links">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="about" style="border-top: none;">
+    <div class="site-wrap">
+      <div class="hero-grid">
+        <div class="fade-up">
+          <p class="hero-eyebrow">PhD Candidate · Australian National University</p>
+          <h1>Buddhi<br>Wathsala</h1>
+          <p class="hero-bio">
+            I am a PhD candidate in Computer Science at the
+            <strong>Australian National University</strong>, specialising in
+            <strong>combinatorial optimisation</strong>, <strong>constraint programming</strong>,
+            and <strong>branch-and-bound algorithms</strong>.
+            My doctoral research centres on the
+            <strong>maximum common subgraph (MCS) problem</strong> — developing
+            novel upper bounds, symmetry-breaking frameworks, and heuristic-exact
+            hybrid methods to push the frontier of exact graph matching.
+          </p>
+          <p class="hero-bio">
+            I bring three years of production software engineering experience at
+            <strong>WSO2</strong>, where I built core components of the Ballerina
+            programming language. I am currently seeking
+            <strong>postdoctoral opportunities</strong> in combinatorial optimisation
+            and constraint programming.
+          </p>
+          <div class="contact-row">
+            <a href="mailto:buddhi.kothalawala@anu.edu.au">
+              <!-- email -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              buddhi.kothalawala@anu.edu.au
+            </a>
+            <a href="https://github.com/BuddhiWathsala" target="_blank">
+              <!-- github -->
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              BuddhiWathsala
+            </a>
+            <a href="https://www.linkedin.com/in/buddhi-kothalawala-6782b5115/" target="_blank">
+              <!-- linkedin -->
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:b.wathsala.bw@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              b.wathsala.bw@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="photo-wrap fade-up">
+          <div class="photo-circle">
+            <!-- placeholder person silhouette -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+          <span class="photo-caption">Canberra, Australia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="site-wrap">
+      <p class="section-label">Research</p>
+
+      <div class="research-item">
+        <span class="research-num">01</span>
+        <div>
+          <div class="research-title">Symmetry Breaking for Maximum Common Subgraph</div>
+          <div class="research-desc">
+            Designed the first comprehensive symmetry-breaking framework for the MCS problem,
+            integrating variable- and value-symmetry-breaking rules with mutual exclusivity guarantees.
+            Extended the framework to the MCS counting problem, combining two previously
+            non-complementary techniques: symmetry breaking and counting.
+          </div>
+          <span class="research-tag">SIGMOD 2026 — Under Review</span>
+        </div>
+      </div>
+
+      <div class="research-item">
+        <span class="research-num">02</span>
+        <div>
+          <div class="research-title">Reinforcement Learning-Based Upper Bound for MCS</div>
+          <div class="research-desc">
+            Introduced a novel upper bound for the MCS problem and developed a reinforcement
+            learning framework for efficient, adaptive activation of the bound within
+            branch-and-bound search, reducing the search space significantly.
+          </div>
+          <span class="research-tag">CP 2025</span>
+        </div>
+      </div>
+
+      <div class="research-item">
+        <span class="research-num">03</span>
+        <div>
+          <div class="research-title">Heuristic Lower Bounds with Convergence Guarantees</div>
+          <div class="research-desc">
+            Developed a new heuristic for computing tighter lower bounds in branch-and-bound
+            MCS algorithms, featuring a dynamic transition criterion grounded in formal
+            convergence guarantees — directly enhancing the efficiency of exact solvers.
+          </div>
+          <span class="research-tag">ADC 2025</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="site-wrap">
+      <p class="section-label">Publications</p>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          A Comprehensive Symmetry-Breaking Framework for the Maximum Common Subgraph Problem
+        </div>
+        <div class="pub-authors">Buddhi Wathsala Kothalawala, Qing Wang</div>
+        <div class="pub-venue">
+          <span>SIGMOD 2026</span>
+          <span class="pub-badge review">Under Review · Round 4</span>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          Reinforcement Learning-Enhanced Upper Bound for Branch-and-Bound MCS Search
+        </div>
+        <div class="pub-authors">Buddhi Wathsala Kothalawala, Qing Wang</div>
+        <div class="pub-venue">
+          <span>CP 2025 — 31st International Conference on Principles and Practice of Constraint Programming</span>
+          <span class="pub-badge published">Published</span>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          Tighter Lower Bounds via Dynamic Transition Heuristics for MCS Branch-and-Bound
+        </div>
+        <div class="pub-authors">Buddhi Wathsala Kothalawala, Qing Wang</div>
+        <div class="pub-venue">
+          <span>ADC 2025 — 36th Australasian Database Conference</span>
+          <span class="pub-badge published">Published</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="site-wrap">
+      <p class="section-label">Experience</p>
+
+      <div class="exp-item">
+        <div class="exp-role">PhD Candidate</div>
+        <div class="exp-period">2021 — Present</div>
+        <div class="exp-org">Australian National University · Canberra, Australia</div>
+        <div class="exp-desc">
+          Doctoral research on the maximum common subgraph problem, focusing on branch-and-bound
+          algorithms, symmetry breaking, reinforcement learning-based bounds, and heuristic-exact
+          hybrid search. Thesis submission targeted March 2026. Supervised by A/Prof. Qing Wang.
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">Academic Tutor</div>
+        <div class="exp-period">2022 — Present</div>
+        <div class="exp-org">Australian National University · Canberra, Australia</div>
+        <div class="exp-desc">
+          Teaching Statistical Machine Learning, Relational Databases, Data Wrangling, and
+          TechLauncher (Software Engineering Project). Responsibilities span lab facilitation,
+          assignment design, and student assessment.
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-period">2018 — 2021</div>
+        <div class="exp-org">WSO2 · Colombo, Sri Lanka</div>
+        <div class="exp-desc">
+          Designed and implemented core components of the Ballerina programming language
+          (standard libraries: gRPC, I/O, Time) and the Siddhi stream processing engine.
+          Architected a Kubernetes operator in Go for Siddhi, enhancing deployment scalability.
+          Led a monolith-to-multi-repository migration, establishing CI/CD pipelines that
+          significantly reduced integration times across multiple engineering teams.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="site-wrap">
+      <span class="footer-name">Buddhi Wathsala Kothalawala</span>
+      <span class="footer-note">Canberra, Australia · 2025</span>
+    </div>
+  </footer>
+
+</body>
+</html>
