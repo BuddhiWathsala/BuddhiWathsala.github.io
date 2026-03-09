@@ -19,6 +19,10 @@
       --bg-warm: #f4f4ef;
       --accent: #2c5f8a;
       --accent-soft: #e8f0f7;
+      --green: #2d7a4a;
+      --green-soft: #eaf4ee;
+      --amber: #a06020;
+      --amber-soft: #fff4e5;
       --serif: 'EB Garamond', Georgia, serif;
       --sans: 'DM Sans', system-ui, sans-serif;
     }
@@ -28,7 +32,7 @@
     body {
       background: var(--bg);
       color: var(--ink);
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: 18px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -38,7 +42,7 @@
     .site-wrap {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
     }
 
     /* ── Nav ── */
@@ -46,7 +50,7 @@
       border-bottom: 1px solid var(--rule);
       position: sticky;
       top: 0;
-      background: rgba(250,250,247,0.95);
+      background: rgba(250,250,247,0.96);
       backdrop-filter: blur(8px);
       z-index: 100;
     }
@@ -54,25 +58,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding-top: 0.9rem;
+      padding-bottom: 0.9rem;
     }
     .nav-name {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: 1rem;
       font-weight: 500;
-      letter-spacing: 0.01em;
       color: var(--ink);
       text-decoration: none;
     }
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.6rem;
       list-style: none;
+      flex-wrap: wrap;
     }
     .nav-links a {
       font-family: var(--sans);
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -83,38 +87,36 @@
     .nav-links a:hover { color: var(--ink); }
 
     /* ── Hero ── */
-    #about {
-      padding: 6rem 0 5rem;
-    }
+    #about { padding: 5rem 0 4rem; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 180px;
+      grid-template-columns: 1fr 190px;
       gap: 3rem;
       align-items: start;
     }
     .hero-eyebrow {
       font-family: var(--sans);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
       font-weight: 500;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
     h1 {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: 2.6rem;
       font-weight: 500;
       line-height: 1.15;
       letter-spacing: -0.01em;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.3rem;
       color: var(--ink);
     }
     .hero-bio {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--ink-light);
       line-height: 1.8;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.4rem;
     }
     .hero-bio strong { color: var(--ink); font-weight: 500; }
 
@@ -123,11 +125,11 @@
       flex-wrap: wrap;
       gap: 0.5rem 1.4rem;
       align-items: center;
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
     .contact-row a {
       font-family: var(--sans);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--ink-light);
       text-decoration: none;
       display: flex;
@@ -136,18 +138,18 @@
       transition: color 0.2s;
     }
     .contact-row a:hover { color: var(--accent); }
-    .contact-row svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .contact-row svg { width: 13px; height: 13px; flex-shrink: 0; }
 
     /* Photo */
     .photo-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.7rem;
     }
     .photo-circle {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       background: var(--bg-warm);
       border: 1px solid var(--rule);
@@ -156,76 +158,61 @@
       justify-content: center;
       overflow: hidden;
     }
-    .photo-circle svg {
-      width: 64px;
-      height: 64px;
-      color: var(--ink-faint);
-    }
+    .photo-circle img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-circle svg { width: 60px; height: 60px; color: var(--ink-faint); }
     .photo-caption {
       font-family: var(--sans);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--ink-faint);
       text-align: center;
     }
 
     /* ── Section base ── */
     section {
-      padding: 4rem 0;
+      padding: 3.5rem 0;
       border-top: 1px solid var(--rule);
     }
     .section-label {
       font-family: var(--sans);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ink-faint);
       font-weight: 500;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.2rem;
     }
 
-    /* ── Research ── */
-    .research-item {
+    /* ── Education ── */
+    .edu-item {
       display: grid;
-      grid-template-columns: 2.5rem 1fr;
-      gap: 0 1.2rem;
-      margin-bottom: 2.4rem;
-      align-items: start;
+      grid-template-columns: 1fr auto;
+      gap: 0.15rem 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
     }
-    .research-num {
+    .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .edu-degree { font-size: 1rem; font-weight: 500; color: var(--ink); }
+    .edu-school { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 0.4rem; }
+    .edu-period {
       font-family: var(--sans);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       color: var(--ink-faint);
-      padding-top: 0.35rem;
       text-align: right;
+      padding-top: 0.2rem;
+      white-space: nowrap;
     }
-    .research-title {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-      line-height: 1.4;
-    }
-    .research-desc {
-      font-size: 0.92rem;
+    .edu-detail {
+      font-size: 0.88rem;
       color: var(--ink-light);
-      line-height: 1.65;
+      line-height: 1.6;
+      grid-column: 1 / -1;
     }
-    .research-tag {
-      display: inline-block;
-      margin-top: 0.55rem;
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
-      font-weight: 500;
-    }
+    .edu-detail li { margin-left: 1.1rem; margin-top: 0.2rem; }
 
     /* ── Publications ── */
     .pub-item {
-      padding: 1.6rem 0;
+      padding: 1.5rem 0;
       border-bottom: 1px solid var(--rule);
     }
     .pub-item:last-child { border-bottom: none; }
@@ -233,80 +220,131 @@
       font-size: 1rem;
       font-weight: 500;
       color: var(--ink);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
       line-height: 1.45;
     }
     .pub-authors {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--ink-light);
       font-style: italic;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
     .pub-venue {
       font-family: var(--sans);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--ink-faint);
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.7rem;
       flex-wrap: wrap;
+      margin-bottom: 0.5rem;
     }
     .pub-badge {
       font-family: var(--sans);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       font-weight: 500;
       letter-spacing: 0.04em;
       padding: 0.15rem 0.5rem;
       border-radius: 2px;
     }
-    .pub-badge.published {
-      background: #eaf4ee;
-      color: #2d7a4a;
+    .pub-badge.published { background: var(--green-soft); color: var(--green); }
+    .pub-badge.review    { background: var(--amber-soft); color: var(--amber); }
+    .pub-badge.wip       { background: var(--bg-warm); color: var(--ink-faint); border: 1px solid var(--rule); }
+    .pub-desc {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      line-height: 1.6;
     }
-    .pub-badge.review {
-      background: #fff4e5;
-      color: #a06020;
-    }
+    .pub-desc li { margin-left: 1.1rem; margin-top: 0.2rem; }
 
     /* ── Experience ── */
     .exp-item {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 0.2rem 2rem;
+      gap: 0.15rem 2rem;
       margin-bottom: 2rem;
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--rule);
     }
-    .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
-    .exp-role {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .exp-org {
-      font-size: 0.9rem;
-      color: var(--ink-light);
-      margin-bottom: 0.5rem;
-    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-role { font-size: 1rem; font-weight: 500; color: var(--ink); }
+    .exp-org  { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 0.4rem; }
     .exp-period {
       font-family: var(--sans);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--ink-faint);
       text-align: right;
       padding-top: 0.2rem;
       white-space: nowrap;
     }
     .exp-desc {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--ink-light);
-      line-height: 1.65;
+      line-height: 1.6;
       grid-column: 1 / -1;
     }
+    .exp-desc li { margin-left: 1.1rem; margin-top: 0.2rem; }
+
+    /* ── Projects ── */
+    .project-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .project-item:last-child { border-bottom: none; }
+    .project-title { font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.35rem; }
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+    .project-desc li { margin-left: 1.1rem; margin-top: 0.2rem; }
+
+    /* ── Awards ── */
+    .award-list { list-style: none; }
+    .award-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.92rem;
+      color: var(--ink-light);
+    }
+    .award-list li:last-child { border-bottom: none; }
+    .award-list li::before {
+      content: '—';
+      color: var(--ink-faint);
+      flex-shrink: 0;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+    }
+
+    /* ── Community ── */
+    .community-group { margin-bottom: 2rem; }
+    .community-group:last-child { margin-bottom: 0; }
+    .community-group-title {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+    }
+    .community-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.55;
+    }
+    .community-item:last-child { border-bottom: none; }
+    .community-item strong { color: var(--ink); font-weight: 500; }
 
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--rule);
-      padding: 2.5rem 0;
+      padding: 2rem 0;
       margin-top: 1rem;
     }
     footer .site-wrap {
@@ -314,37 +352,26 @@
       justify-content: space-between;
       align-items: center;
     }
-    .footer-name {
-      font-family: var(--serif);
-      font-size: 0.9rem;
-      color: var(--ink-light);
-    }
-    .footer-note {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      color: var(--ink-faint);
-    }
+    .footer-name { font-family: var(--sans); font-size: 0.88rem; color: var(--ink-light); }
+    .footer-note { font-family: var(--sans); font-size: 0.72rem; color: var(--ink-faint); }
 
     /* ── Fade in ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .fade-up {
-      animation: fadeUp 0.6s ease both;
-    }
+    .fade-up { animation: fadeUp 0.55s ease both; }
     .fade-up:nth-child(2) { animation-delay: 0.1s; }
-    .fade-up:nth-child(3) { animation-delay: 0.2s; }
 
     /* ── Responsive ── */
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       h1 { font-size: 2rem; }
       .hero-grid { grid-template-columns: 1fr; }
-      .photo-wrap { flex-direction: row; align-items: center; gap: 1.2rem; }
+      .photo-wrap { flex-direction: row; align-items: center; gap: 2rem; margin-bottom: 1rem; }
       .photo-circle { width: 90px; height: 90px; }
-      .nav-links { gap: 1.2rem; }
-      .exp-item { grid-template-columns: 1fr; }
-      .exp-period { text-align: left; }
+      .nav-links { gap: 1rem; }
+      .exp-item, .edu-item { grid-template-columns: 1fr; }
+      .exp-period, .edu-period { text-align: left; }
     }
   </style>
 </head>
@@ -353,68 +380,69 @@
   <!-- NAV -->
   <nav>
     <div class="site-wrap">
-      <a class="nav-name" href="#about">Buddhi Wathsala</a>
+      <a class="nav-name" href="#about">Buddhi Kothalawala</a>
       <ul class="nav-links">
-        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#community">Community</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="about" style="border-top: none;">
+  <section id="about" style="border-top:none;">
     <div class="site-wrap">
       <div class="hero-grid">
         <div class="fade-up">
           <p class="hero-eyebrow">PhD Candidate · Australian National University</p>
-          <h1>Buddhi<br>Wathsala</h1>
+          <h1>Buddhi Kothalawala</h1>
           <p class="hero-bio">
             I am a PhD candidate in Computer Science at the
             <strong>Australian National University</strong>, specialising in
-            <strong>combinatorial optimisation</strong>, <strong>constraint programming</strong>,
-            and <strong>branch-and-bound algorithms</strong>.
-            My doctoral research centres on the
-            <strong>maximum common subgraph (MCS) problem</strong> — developing
-            novel upper bounds, symmetry-breaking frameworks, and heuristic-exact
-            hybrid methods to push the frontier of exact graph matching.
+            <strong>branch-and-bound algorithms</strong>, <strong>combinatorial optimisation</strong>,
+            and <strong>constraint programming</strong>. My doctoral research centres on the
+            <strong>maximum common subgraph (MCS) problem</strong> — developing novel upper bounds,
+            symmetry-breaking frameworks, and heuristic-exact hybrid methods.
           </p>
           <p class="hero-bio">
-            I bring three years of production software engineering experience at
-            <strong>WSO2</strong>, where I built core components of the Ballerina
-            programming language. I am currently seeking
-            <strong>postdoctoral opportunities</strong> in combinatorial optimisation
-            and constraint programming.
+            I bring 3+ years of production software engineering experience at <strong>WSO2</strong>,
+            where I built core components of the Ballerina programming language and the Siddhi stream
+            processing engine. I am currently seeking <strong>postdoctoral opportunities</strong> in
+            combinatorial optimisation and constraint programming.
           </p>
           <div class="contact-row">
-            <a href="/cdn-cgi/l/email-protection#5f3d2a3b3b37367134302b373e333e283e333e1f3e312a713a3b2a713e2a">
-              <!-- email -->
+            <a href="mailto:buddhi.kothalawala@anu.edu.au">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-              <span class="__cf_email__" data-cfemail="d8baadbcbcb0b1f6b3b7acb0b9b4b9afb9b4b998b9b6adf6bdbcadf6b9ad">[email&#160;protected]</span>
+              buddhi.kothalawala@anu.edu.au
+            </a>
+            <a href="mailto:b.wathsala.bw@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              b.wathsala.bw@gmail.com
             </a>
             <a href="https://github.com/BuddhiWathsala" target="_blank">
-              <!-- github -->
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
               BuddhiWathsala
             </a>
             <a href="https://www.linkedin.com/in/buddhi-kothalawala-6782b5115/" target="_blank">
-              <!-- linkedin -->
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
-            <a href="/cdn-cgi/l/email-protection#f694d88197829e85979a97d89481b6919b979f9ad895999b">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-              <span class="__cf_email__" data-cfemail="b4d69ac3d5c0dcc7d5d8d59ad6c3f4d3d9d5ddd89ad7dbd9">[email&#160;protected]</span>
+            <a href="https://medium.com/@buddhikothalawala" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+              Medium
             </a>
           </div>
         </div>
 
         <div class="photo-wrap fade-up">
           <div class="photo-circle">
-            <!-- placeholder person silhouette -->
-            <img src="images/profile.jpg" alt="Buddhi Wathsala" style="width:100%; height:100%; object-fit:cover;" />
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            <img src="images/profile.jpg" alt="Buddhi Wathsala"
+                 onerror="this.style.display='none'; this.parentNode.querySelector('svg').style.display='block';" />
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="display:none;">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
             </svg>
           </div>
           <span class="photo-caption">Canberra, Australia</span>
@@ -423,90 +451,91 @@
     </div>
   </section>
 
-  <!-- RESEARCH
-  <section id="research">
+  <!-- EDUCATION -->
+  <section id="education">
     <div class="site-wrap">
-      <p class="section-label">Research</p>
+      <p class="section-label">Education</p>
 
-      <div class="research-item">
-        <span class="research-num">01</span>
-        <div>
-          <div class="research-title">Symmetry Breaking for Maximum Common Subgraph</div>
-          <div class="research-desc">
-            Designed the first comprehensive symmetry-breaking framework for the MCS problem,
-            integrating variable- and value-symmetry-breaking rules with mutual exclusivity guarantees.
-            Extended the framework to the MCS counting problem, combining two previously
-            non-complementary techniques: symmetry breaking and counting.
-          </div>
-          <span class="research-tag">SIGMOD 2026 — Under Review</span>
-        </div>
+      <div class="edu-item">
+        <div class="edu-degree">PhD in Computer Science</div>
+        <div class="edu-period">2022 — 2026</div>
+        <div class="edu-school">The Australian National University · Canberra, Australia</div>
+        <ul class="edu-detail">
+          <li>Thesis: <em>Combinatorial Search Algorithms for the Maximum Common Subgraph Problem</em></li>
+          <li>Research Focus: Novel branch-and-bound algorithms enhanced with reinforcement learning and symmetry breaking</li>
+          <li>Funding: ANU PhD Scholarship (International) + HDR Fee Remission Merit Scholarship</li>
+        </ul>
       </div>
 
-      <div class="research-item">
-        <span class="research-num">02</span>
-        <div>
-          <div class="research-title">Reinforcement Learning-Based Upper Bound for MCS</div>
-          <div class="research-desc">
-            Introduced a novel upper bound for the MCS problem and developed a reinforcement
-            learning framework for efficient, adaptive activation of the bound within
-            branch-and-bound search, reducing the search space significantly.
-          </div>
-          <span class="research-tag">CP 2025</span>
-        </div>
-      </div>
-
-      <div class="research-item">
-        <span class="research-num">03</span>
-        <div>
-          <div class="research-title">Heuristic Lower Bounds with Convergence Guarantees</div>
-          <div class="research-desc">
-            Developed a new heuristic for computing tighter lower bounds in branch-and-bound
-            MCS algorithms, featuring a dynamic transition criterion grounded in formal
-            convergence guarantees — directly enhancing the efficiency of exact solvers.
-          </div>
-          <span class="research-tag">ADC 2025</span>
-        </div>
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor of Science in Computer Science (Honours)</div>
+        <div class="edu-period">2015 — 2019</div>
+        <div class="edu-school">University of Colombo School of Computing · Colombo, Sri Lanka</div>
+        <ul class="edu-detail">
+          <li>GPA: 3.79 / 4.00</li>
+          <li>Thesis: <em>Online Learning for Solving Data Availability Problem in Natural Language Processing</em></li>
+          <li>ICTA Award for Best Computer Science Final Year Research Project (2018)</li>
+        </ul>
       </div>
 
     </div>
-  </section> -->
+  </section>
 
   <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="site-wrap">
-      <p class="section-label">Publications</p>
+      <p class="section-label">Research &amp; Publications</p>
 
       <div class="pub-item">
-        <div class="pub-title">
-          A Comprehensive Symmetry-Breaking Framework for the Maximum Common Subgraph Problem
-        </div>
-        <div class="pub-authors">Buddhi Wathsala Kothalawala, Qing Wang</div>
+        <div class="pub-title">Accelerating Maximum Common Subgraph Computation by Exploiting Symmetries</div>
+        <div class="pub-authors">Kothalawala, B., Koehler, H., &amp; Farhan, M.</div>
         <div class="pub-venue">
-          <span>SIGMOD 2026</span>
-          <span class="pub-badge review">Under Review · Round 4</span>
+          <span>ACM SIGMOD 2026 · CORE A*</span>
+          <span class="pub-badge published">Accepted · In Press</span>
         </div>
+        <ul class="pub-desc">
+          <li>Developed a symmetry-breaking framework for MCS algorithms substantially outperforming state-of-the-art methods</li>
+          <li>Demonstrated significant speedups on standard MCS benchmarks through comprehensive symmetry-aware pruning</li>
+        </ul>
       </div>
 
       <div class="pub-item">
-        <div class="pub-title">
-          Reinforcement Learning-Enhanced Upper Bound for Branch-and-Bound MCS Search
-        </div>
-        <div class="pub-authors">Buddhi Wathsala Kothalawala, Qing Wang</div>
+        <div class="pub-title">From Exploratory Heuristics to Exact Search: Accelerating Maximum Common Subgraph Algorithms</div>
+        <div class="pub-authors">Kothalawala, B., Koehler, H., Wang, Q., &amp; Farhan, M.</div>
         <div class="pub-venue">
-          <span>CP 2025 — 31st International Conference on Principles and Practice of Constraint Programming</span>
+          <span>Australasian Database Conference (ADC) 2025</span>
           <span class="pub-badge published">Published</span>
         </div>
+        <ul class="pub-desc">
+          <li>Proposed a novel heuristic mechanism to escape local optima in depth-first branch-and-bound algorithms</li>
+          <li>Developed a principled transitioning criterion from heuristic to exact search with theoretical convergence guarantees</li>
+        </ul>
       </div>
 
       <div class="pub-item">
-        <div class="pub-title">
-          Tighter Lower Bounds via Dynamic Transition Heuristics for MCS Branch-and-Bound
-        </div>
-        <div class="pub-authors">Buddhi Wathsala Kothalawala, Qing Wang</div>
+        <div class="pub-title">Learning to Bound for Maximum Common Subgraph Algorithms</div>
+        <div class="pub-authors">Kothalawala, B., Koehler, H., &amp; Wang, Q.</div>
         <div class="pub-venue">
-          <span>ADC 2025 — 36th Australasian Database Conference</span>
+          <span>CP 2025 — 31st International Conference on Principles and Practice of Constraint Programming · CORE A</span>
           <span class="pub-badge published">Published</span>
         </div>
+        <ul class="pub-desc">
+          <li>Developed a reinforcement learning framework achieving maximum possible bound reduction for NP-hard optimisation problems</li>
+          <li>Empirically demonstrated superior performance over existing branch-and-bound approaches</li>
+        </ul>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Online Learning for Solving Data Availability Problem in Natural Language Processing</div>
+        <div class="pub-authors">Kothalawala, B., Weerasinghe, R., &amp; Kumarasinghe, P.</div>
+        <div class="pub-venue">
+          <span>NL4AI @ AI*IA 2019</span>
+          <span class="pub-badge published">Published</span>
+        </div>
+        <ul class="pub-desc">
+          <li>Addressed model retraining challenges for the low-resource language Sinhalese</li>
+          <li>Applied online learning with CRFs, RNNs, and bidirectional LSTMs to overcome data scarcity in NLP</li>
+        </ul>
       </div>
 
     </div>
@@ -518,34 +547,165 @@
       <p class="section-label">Experience</p>
 
       <div class="exp-item">
-        <div class="exp-role">PhD Candidate</div>
-        <div class="exp-period">2021 — Present</div>
-        <div class="exp-org">Australian National University · Canberra, Australia</div>
-        <div class="exp-desc">
-          Doctoral research on the maximum common subgraph problem, focusing on branch-and-bound
-          algorithms, symmetry breaking, reinforcement learning-based bounds, and heuristic-exact
-          hybrid search. Thesis submission targeted March 2026. Supervised by A/Prof. Qing Wang.
-        </div>
+        <div class="exp-role">PhD Candidate &amp; Researcher</div>
+        <div class="exp-period">Jun 2022 — Present</div>
+        <div class="exp-org">The Australian National University · Canberra, Australia</div>
+        <ul class="exp-desc">
+          <li>Pioneering exact solutions for NP-hard combinatorial optimisation using advanced constraint programming</li>
+          <li>Developing novel branch-and-bound algorithms enhanced with symmetry breaking and reinforcement learning</li>
+          <li>Published at top-tier venues: SIGMOD 2026, CP 2025, and ADC 2025</li>
+        </ul>
       </div>
 
       <div class="exp-item">
         <div class="exp-role">Academic Tutor</div>
-        <div class="exp-period">2022 — Present</div>
-        <div class="exp-org">Australian National University · Canberra, Australia</div>
-        <div class="exp-desc">
-          Teaching Statistical Machine Learning, Relational Databases, Data Wrangling, and
-          TechLauncher (Software Engineering Project). Responsibilities span lab facilitation,
-          assignment design, and student assessment.
-        </div>
+        <div class="exp-period">Feb 2023 — Present</div>
+        <div class="exp-org">The Australian National University · Canberra, Australia</div>
+        <ul class="exp-desc">
+          <li>Taught and mentored 150+ students across three advanced courses with consistently high satisfaction ratings</li>
+          <li>Courses: Statistical Machine Learning (COMP4670/8600), Relational Databases (COMP2400/6240), Data Wrangling (COMP3430/8430)</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">Senior Software Engineer</div>
+        <div class="exp-period">Nov 2020 — Jun 2022</div>
+        <div class="exp-org">WSO2 · Colombo, Sri Lanka</div>
+        <ul class="exp-desc">
+          <li>Owned development of Ballerina's standard libraries: gRPC, Time, and I/O — driving critical feature implementation</li>
+          <li>Authored technical articles to enhance community awareness and adoption</li>
+        </ul>
       </div>
 
       <div class="exp-item">
         <div class="exp-role">Software Engineer</div>
-        <div class="exp-period">2018 — 2021</div>
+        <div class="exp-period">Feb 2019 — Oct 2020</div>
         <div class="exp-org">WSO2 · Colombo, Sri Lanka</div>
-        <div class="exp-desc">
-          Designed and implemented core components of the Ballerina programming language
-          (standard libraries: gRPC, I/O, Time) and the Siddhi stream processing engine.
-          Architected a Kubernetes operator in Go for Siddhi, enhancing deployment scalability.
-          Led a monolith-to-multi-repository migration, establishing CI/CD pipelines that
-          significantly reduced integration times across multiple engine
+        <ul class="exp-desc">
+          <li>Developed the Siddhi Kubernetes operator and cloud-native features for the Siddhi stream processing engine</li>
+          <li>Led the migration of Ballerina from a monolithic repository to a scalable multi-repository architecture</li>
+          <li>Established CI/CD pipelines and best practices across multiple engineering teams</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-role">Software Engineer Intern</div>
+        <div class="exp-period">Aug 2017 — Jan 2018</div>
+        <div class="exp-org">WSO2 · Colombo, Sri Lanka</div>
+        <ul class="exp-desc">
+          <li>Developed an internal application for license and repository management</li>
+          <li>Gained hands-on experience across the full software development lifecycle</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="site-wrap">
+      <p class="section-label">Selected Projects</p>
+
+      <div class="project-item">
+        <div class="project-title">Ballerina Multi-Repository Architecture Migration</div>
+        <ul class="project-desc">
+          <li>Led the transition of Ballerina from a monolithic codebase to a multi-repository architecture to improve maintainability and scalability</li>
+          <li>Coordinated with multiple teams to guide and support migration of their respective components</li>
+          <li>Established CI/CD pipelines and best practices adopted across the organisation</li>
+        </ul>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">High-Performance Standard Libraries — Ballerina &amp; Siddhi</div>
+        <ul class="project-desc">
+          <li><strong>gRPC Library:</strong> Implemented key features including message compression for Ballerina's gRPC standard library</li>
+          <li><strong>I/O Library:</strong> Simplified I/O APIs in Ballerina to improve scalability and developer experience</li>
+          <li><strong>Time Library:</strong> Developed UTC time handling and timezone conversion support</li>
+          <li><strong>Siddhi Kubernetes Operator:</strong> Made Siddhi cloud-native by developing Kubernetes and Docker deployment features</li>
+        </ul>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">MCS Algorithm Research Suite</div>
+        <ul class="project-desc">
+          <li>Novel bound calculation method achieving maximum empirical bound reduction in branch-and-bound MCS search</li>
+          <li>Novel heuristic to enhance lower bound quality, enabling efficient transition to exact search</li>
+          <li>Comprehensive symmetry-breaking framework to reduce redundant search effort in MCS algorithms</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="site-wrap">
+      <p class="section-label">Awards &amp; Recognition</p>
+      <ul class="award-list">
+        <li>ANU PhD Scholarship (International) — The Australian National University</li>
+        <li>HDR Fee Remission Merit Scholarship — The Australian National University</li>
+        <li>Sustained Outstanding Contribution Award — WSO2 (2019 &amp; 2020)</li>
+        <li>ICTA Award for Best Computer Science Final Year Research Project — 2018</li>
+        <li>Open Source Contributor — Ballerina, Siddhi, and WSO2 GitHub organisations</li>
+        <li>Leadership Excellence — President, WSO2 Toastmasters Club (2020/21)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community">
+    <div class="site-wrap">
+      <p class="section-label">Community &amp; Service</p>
+
+      <div class="community-group">
+        <div class="community-group-title">Open Source</div>
+        <div class="community-item">
+          <strong>Core Contributor</strong> — Ballerina programming language, Siddhi streaming ecosystem, and StackOverflow (1K+ reputation)
+        </div>
+        <div class="community-item">
+          <strong>Community Leadership</strong> — Conducted the first Ballerina Language Community Call, reaching 1,200+ views
+        </div>
+        <div class="community-item">
+          <strong>Technical Writing</strong> — Published articles on Medium and DZone with 20,000+ total views
+        </div>
+      </div>
+
+      <div class="community-group">
+        <div class="community-group-title">Mentoring &amp; Teaching</div>
+        <div class="community-item">
+          <strong>Research Supervision</strong> — Mentored a final year research project on compressing Bi-LSTM-based contextualised word embeddings
+        </div>
+        <div class="community-item">
+          <strong>Industry Mentorship</strong> — Guided junior developers at WSO2 on best practices and career development
+        </div>
+        <div class="community-item">
+          <strong>Academic Tutoring</strong> — Delivered tutoring to 150+ students across three university courses at ANU
+        </div>
+      </div>
+
+      <div class="community-group">
+        <div class="community-group-title">Professional Development</div>
+        <div class="community-item">
+          <strong>Toastmasters International</strong> — Completed three levels of the Dynamic Leadership Pathway Programme
+        </div>
+        <div class="community-item">
+          <strong>Conference Presentations</strong> — Speaker at technical conferences and community events
+        </div>
+        <div class="community-item">
+          <strong>Media Engagement</strong> — Featured expert on the Internet Sampath Android OS Radio Programme
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="site-wrap">
+      <span class="footer-name">Buddhi Wathsala Kothalawala</span>
+      <span class="footer-note">Canberra, Australia · 2025</span>
+    </div>
+  </footer>
+
+</body>
+</html>
